@@ -16,7 +16,7 @@ typealias RegexPattern = Types.RegexPattern
 /// Helper function to create regex patterns with clean syntax
 function Regex(pattern: String): RegexPattern = Types.Regex(pattern)
 
-class Step {
+open class Step {
     _type = "step"
     /// Which profiles (HK_PROFILES) need to be active for the step to run
     profiles: List<String>?
@@ -107,7 +107,7 @@ class Step {
     tests: Mapping<String, StepTest> = new Mapping<String, StepTest>{}
 }
 
-class StepTest {
+open class StepTest {
     /// What to run: "check", "fix", or "command"
     run: "check" | "fix" = "check"
     /// Files to pass to the command (used to render {{ files }})
@@ -126,7 +126,7 @@ class StepTest {
     expect: StepTestExpect = new StepTestExpect{}
 }
 
-class StepTestExpect {
+open class StepTestExpect {
     /// Expected exit code (default 0)
     code = 0
     /// Substring that must appear in stdout
@@ -139,12 +139,12 @@ class StepTestExpect {
 
 typealias StashMethod = Boolean | "git" | "patch-file" | "none"
 
-class Group {
+open class Group {
     _type = "group"
     steps: Mapping<String, Step> = new Mapping<String, Step>{}
 }
 
-class Hook {
+open class Hook {
     fix: Boolean?
     stash: StashMethod?
     /// Command to run after the hook completes. Receives timing JSON in `HK_REPORT_JSON`.
