@@ -1,10 +1,10 @@
 import "../Config.pkl"
 
 bundle_audit = new Config.Step {
-    category = "Ruby"
-    description = "Dependency security audit"
-    glob = "**/Gemfile.lock"
-    stage = "<JOB_FILES>"
-    check = "bundle-audit check {{ files }}"
-    fix = "bundle-audit update"
+  category = "Ruby"
+  description = "Dependency security audit"
+  glob = "**/Gemfile.lock"
+  stage = "<JOB_FILES>"
+  check = "bundle-audit check {{ files }}"
+  fix = "bundle-audit update"
 }

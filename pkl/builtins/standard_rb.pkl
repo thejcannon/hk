@@ -1,10 +1,10 @@
 import "../Config.pkl"
 
 standard_rb = new Config.Step {
-    category = "Ruby"
-    description = "Ruby Standard Style"
-    glob = "**/*.rb"
-    stage = "<JOB_FILES>"
-    check = "standardrb {{ files }}"
-    fix = "standardrb --fix {{ files }}"
+  category = "Ruby"
+  description = "Ruby Standard Style"
+  glob = "**/*.rb"
+  stage = "<JOB_FILES>"
+  check = "standardrb {{ files }}"
+  fix = "standardrb --fix {{ files }}"
 }

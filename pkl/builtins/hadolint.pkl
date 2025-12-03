@@ -1,8 +1,8 @@
 import "../Config.pkl"
 
 hadolint = new Config.Step {
-    category = "Infrastructure"
-    description = "Dockerfile linter"
-    glob = "**/Dockerfile*"
-    check = "hadolint {{ files }}"
+  category = "Infrastructure"
+  description = "Dockerfile linter"
+  glob = "**/Dockerfile*"
+  check = "hadolint {{ files }}"
 }

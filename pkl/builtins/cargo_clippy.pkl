@@ -1,15 +1,16 @@
 import "../Config.pkl"
 
 cargo_clippy = new Config.Step {
-    category = "Rust"
-    description = "Rust linter"
-    glob = "**/*.rs"
-    stage = "<JOB_FILES>"
-    workspace_indicator = "Cargo.toml"
-    check = "cargo clippy --manifest-path {{workspace_indicator}} --quiet"
-    fix = "cargo clippy --manifest-path {{workspace_indicator}} --fix --allow-dirty --allow-staged --quiet"
-    check_first = false
-    env {
-      ["CARGO_TERM_PROGRESS_WHEN"] = "never"
-    }
+  category = "Rust"
+  description = "Rust linter"
+  glob = "**/*.rs"
+  stage = "<JOB_FILES>"
+  workspace_indicator = "Cargo.toml"
+  check = "cargo clippy --manifest-path {{workspace_indicator}} --quiet"
+  fix =
+    "cargo clippy --manifest-path {{workspace_indicator}} --fix --allow-dirty --allow-staged --quiet"
+  check_first = false
+  env {
+    ["CARGO_TERM_PROGRESS_WHEN"] = "never"
+  }
 }

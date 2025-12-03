@@ -1,10 +1,10 @@
 import "../Config.pkl"
 
 php_cs = new Config.Step {
-    category = "PHP"
-    description = "PHP coding standards"
-    glob = "**/*.php"
-    stage = "<JOB_FILES>"
-    check = "phpcs {{ files }}"
-    fix = "phpcbf {{ files }}"
+  category = "PHP"
+  description = "PHP coding standards"
+  glob = "**/*.php"
+  stage = "<JOB_FILES>"
+  check = "phpcs {{ files }}"
+  fix = "phpcbf {{ files }}"
 }

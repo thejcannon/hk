@@ -1,10 +1,10 @@
 import "../Config.pkl"
 
 rubocop = new Config.Step {
-    category = "Ruby"
-    description = "Ruby style guide"
-    glob = "**/*.rb"
-    stage = "<JOB_FILES>"
-    check = "rubocop {{ files }}"
-    fix = "rubocop --fix {{ files }}"
+  category = "Ruby"
+  description = "Ruby style guide"
+  glob = "**/*.rb"
+  stage = "<JOB_FILES>"
+  check = "rubocop {{ files }}"
+  fix = "rubocop --fix {{ files }}"
 }

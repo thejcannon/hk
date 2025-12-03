@@ -1,9 +1,9 @@
 import "../Config.pkl"
 
 shellcheck = new Config.Step {
-    category = "Shell"
-    description = "Shell script analyzer"
-    batch = true
-    glob = List("**/*.sh", "**/*.bash")
-    check = "shellcheck {{ files }}"
+  category = "Shell"
+  description = "Shell script analyzer"
+  batch = true
+  glob = List("**/*.sh", "**/*.bash")
+  check = "shellcheck {{ files }}"
 }

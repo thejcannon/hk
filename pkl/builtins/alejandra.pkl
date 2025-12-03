@@ -1,10 +1,10 @@
 import "../Config.pkl"
 
 alejandra = new Config.Step {
-    category = "Nix"
-    description = "Alternative Nix formatter"
-    glob = "**/*.nix"
-    stage = "<JOB_FILES>"
-    check = "alejandra --check {{ files }}"
-    fix = "alejandra {{ files }}"
+  category = "Nix"
+  description = "Alternative Nix formatter"
+  glob = "**/*.nix"
+  stage = "<JOB_FILES>"
+  check = "alejandra --check {{ files }}"
+  fix = "alejandra {{ files }}"
 }

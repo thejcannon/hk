@@ -1,11 +1,11 @@
 import "../Config.pkl"
 
 cargo_check = new Config.Step {
-    category = "Rust"
-    description = "Fast Rust type checking"
-    glob = "**/*.rs"
-    check = "cargo check -q"
-    env {
-        ["CARGO_TERM_COLOR"] = "{% if color %}always{% else %}never{% endif %}"
-    }
+  category = "Rust"
+  description = "Fast Rust type checking"
+  glob = "**/*.rs"
+  check = "cargo check -q"
+  env {
+    ["CARGO_TERM_COLOR"] = "{% if color %}always{% else %}never{% endif %}"
+  }
 }

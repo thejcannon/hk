@@ -1,10 +1,10 @@
 import "../Config.pkl"
 
 gomod_tidy = new Config.Step {
-    category = "Go"
-    description = "Go module maintenance"
-    glob = "**/go.mod"
-    stage = "<JOB_FILES>"
-    check_diff = "go mod tidy -diff"
-    fix = "go mod tidy"
+  category = "Go"
+  description = "Go module maintenance"
+  glob = "**/go.mod"
+  stage = "<JOB_FILES>"
+  check_diff = "go mod tidy -diff"
+  fix = "go mod tidy"
 }

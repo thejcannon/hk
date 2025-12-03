@@ -1,8 +1,8 @@
 import "../Config.pkl"
 
 erb = new Config.Step {
-    category = "Ruby"
-    description = "ERB template linter"
-    glob = "**/*.erb"
-    check = "erb -P -x -T - {{ files }} | ruby -c"
+  category = "Ruby"
+  description = "ERB template linter"
+  glob = "**/*.erb"
+  check = "erb -P -x -T - {{ files }} | ruby -c"
 }

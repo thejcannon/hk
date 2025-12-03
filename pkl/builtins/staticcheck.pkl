@@ -1,8 +1,8 @@
 import "../Config.pkl"
 
 staticcheck = new Config.Step {
-    category = "Go"
-    description = "Go static analysis"
-    glob = "**/*.go"
-    check = "staticcheck {{ files }}"
+  category = "Go"
+  description = "Go static analysis"
+  glob = "**/*.go"
+  check = "staticcheck {{ files }}"
 }

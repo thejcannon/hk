@@ -1,9 +1,9 @@
 import "../Config.pkl"
 
 actionlint = new Config.Step {
-    category = "Infrastructure"
-    description = "GitHub Actions workflow linter"
-    glob = List(".github/workflows/*.yml", ".github/workflows/*.yaml")
-    batch = true
-    check = "actionlint {{ files }}"
+  category = "Infrastructure"
+  description = "GitHub Actions workflow linter"
+  glob = List(".github/workflows/*.yml", ".github/workflows/*.yaml")
+  batch = true
+  check = "actionlint {{ files }}"
 }

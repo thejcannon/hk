@@ -1,8 +1,9 @@
 import "../Config.pkl"
 
 cpp_lint = new Config.Step {
-    category = "Other Languages"
-    description = "C++ style checker"
-    glob = List("**/*.c", "**/*.h", "**/*.cpp", "**/*.hpp", "**/*.cc", "**/*.hh", "**/*.cxx", "**/*.hxx")
-    check = "cpplint {{ files }}"
+  category = "Other Languages"
+  description = "C++ style checker"
+  glob =
+    List("**/*.c", "**/*.h", "**/*.cpp", "**/*.hpp", "**/*.cc", "**/*.hh", "**/*.cxx", "**/*.hxx")
+  check = "cpplint {{ files }}"
 }

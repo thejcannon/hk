@@ -1,11 +1,11 @@
 import "../Config.pkl"
 
 dprint = new Config.Step {
-    category = "Other Languages"
-    description = "Pluggable code formatter"
-    glob = "**/*"
-    stage = "<JOB_FILES>"
-    check = "dprint check --allow-no-files {{ files }}"
-    check_list_files = "dprint check --allow-no-files --list-different {{ files }}"
-    fix = "dprint fmt --allow-no-files {{ files }}"
+  category = "Other Languages"
+  description = "Pluggable code formatter"
+  glob = "**/*"
+  stage = "<JOB_FILES>"
+  check = "dprint check --allow-no-files {{ files }}"
+  check_list_files = "dprint check --allow-no-files --list-different {{ files }}"
+  fix = "dprint fmt --allow-no-files {{ files }}"
 }

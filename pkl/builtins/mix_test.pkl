@@ -1,9 +1,9 @@
 import "../Config.pkl"
 
 mix_test = new Config.Step {
-    category = "Elixir"
-    description = "Test Elixir with Mix"
-    glob = List("**/*.ex", "**/*.exs")
-    exclude = List("deps/**/*")
-    check = "mix test --warnings-as-errors {{files}}"
+  category = "Elixir"
+  description = "Test Elixir with Mix"
+  glob = List("**/*.ex", "**/*.exs")
+  exclude = List("deps/**/*")
+  check = "mix test --warnings-as-errors {{files}}"
 }

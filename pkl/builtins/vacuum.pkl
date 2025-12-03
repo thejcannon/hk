@@ -1,9 +1,17 @@
 import "../Config.pkl"
 
 vacuum = new Config.Step {
-    category = "Other Languages"
-    description = "Fast OpenAPI linter"
-    glob = List("**/*openapi*.yaml", "**/*openapi*.yml", "**/*openapi*.json", "**/*swagger*.yaml", "**/*swagger*.yml", "**/*swagger*.json")
-    check = "vacuum lint {{files}}"
-    fix = "vacuum lint --fix {{files}}"
+  category = "Other Languages"
+  description = "Fast OpenAPI linter"
+  glob =
+    List(
+      "**/*openapi*.yaml",
+      "**/*openapi*.yml",
+      "**/*openapi*.json",
+      "**/*swagger*.yaml",
+      "**/*swagger*.yml",
+      "**/*swagger*.json",
+    )
+  check = "vacuum lint {{files}}"
+  fix = "vacuum lint --fix {{files}}"
 }

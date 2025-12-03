@@ -1,18 +1,19 @@
 import "../Config.pkl"
 
 shfmt = new Config.Step {
-    category = "Shell"
-    description = "Shell formatter"
-    batch = true
-    glob = List("**/*.sh", "**/*.bash", "**/*.mksh", "**/*.bats", "**/*.zsh")
-    stage = "<JOB_FILES>"
-    check_diff = "shfmt -d {{ files }}"
-    check_list_files = """
-files=$(shfmt -l {{ files }})
-if [ -n "$files" ]; then
-  echo "$files"
-  exit 1
-fi
-"""
-    fix = "shfmt -w {{ files }}"
+  category = "Shell"
+  description = "Shell formatter"
+  batch = true
+  glob = List("**/*.sh", "**/*.bash", "**/*.mksh", "**/*.bats", "**/*.zsh")
+  stage = "<JOB_FILES>"
+  check_diff = "shfmt -d {{ files }}"
+  check_list_files =
+    """
+    files=$(shfmt -l {{ files }})
+    if [ -n "$files" ]; then
+      echo "$files"
+      exit 1
+    fi
+    """
+  fix = "shfmt -w {{ files }}"
 }

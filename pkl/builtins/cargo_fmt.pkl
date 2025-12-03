@@ -1,11 +1,11 @@
 import "../Config.pkl"
 
 cargo_fmt = new Config.Step {
-    category = "Rust"
-    description = "Rust code formatter"
-    glob = "**/*.rs"
-    stage = "<JOB_FILES>"
-    workspace_indicator = "Cargo.toml"
-    check = "cargo fmt --check --manifest-path {{workspace_indicator}}"
-    fix = "cargo fmt --manifest-path {{workspace_indicator}}"
+  category = "Rust"
+  description = "Rust code formatter"
+  glob = "**/*.rs"
+  stage = "<JOB_FILES>"
+  workspace_indicator = "Cargo.toml"
+  check = "cargo fmt --check --manifest-path {{workspace_indicator}}"
+  fix = "cargo fmt --manifest-path {{workspace_indicator}}"
 }

@@ -1,55 +1,55 @@
 import "../Config.pkl"
 
 ruff = new Config.Step {
-    category = "Python"
-    description = "Fast Python linter"
-    glob = List("**/*.py", "**/*.pyi")
-    stage = "<JOB_FILES>"
-    check = "ruff check {{ files }}"
-    check_diff = "ruff check --force-exclude --diff {{ files }}"
-    fix = "ruff check --force-exclude --fix {{ files }}"
-    tests {
-        ["detects unused import"] {
-            run = "check"
-            write { ["{{tmp}}/test.py"] = "import sys\nprint('hello')\n" }
-            files = List("{{tmp}}/test.py")
-            expect { code = 1 }
-        }
-        ["fixes unused import"] {
-            run = "fix"
-            write { ["{{tmp}}/test.py"] = "import sys\nprint('hello')\n" }
-            files = List("{{tmp}}/test.py")
-            expect {
-                code = 0
-                files { ["{{tmp}}/test.py"] = "print('hello')\n" }
-            }
-        }
-        ["passes clean file"] {
-            run = "check"
-            write { ["{{tmp}}/test.py"] = "print('hello')\n" }
-            files = List("{{tmp}}/test.py")
-            expect { code = 0 }
-        }
-        ["check respects config exclude"] {
-            run = "check"
-            write {
-                ["{{tmp}}/test.py"] = "import sys\nprint('hello')\n"
-                ["{{tmp}}/ruff.toml"] = "exclude = [\"test.py\"]\n"
-            }
-            files = List("{{tmp}}/test.py")
-            expect { code = 0 }
-        }
-        ["fix respects config exclude"] {
-            run = "fix"
-            write {
-                ["{{tmp}}/test.py"] = "import sys\nprint('hello')\n"
-                ["{{tmp}}/ruff.toml"] = "exclude = [\"test.py\"]\n"
-            }
-            files = List("{{tmp}}/test.py")
-            expect {
-                code = 0
-                files { ["{{tmp}}/test.py"] = "import sys\nprint('hello')\n" }
-            }
-        }
+  category = "Python"
+  description = "Fast Python linter"
+  glob = List("**/*.py", "**/*.pyi")
+  stage = "<JOB_FILES>"
+  check = "ruff check {{ files }}"
+  check_diff = "ruff check --force-exclude --diff {{ files }}"
+  fix = "ruff check --force-exclude --fix {{ files }}"
+  tests {
+    ["detects unused import"] {
+      run = "check"
+      write { ["{{tmp}}/test.py"] = "import sys\nprint('hello')\n" }
+      files = List("{{tmp}}/test.py")
+      expect { code = 1 }
     }
+    ["fixes unused import"] {
+      run = "fix"
+      write { ["{{tmp}}/test.py"] = "import sys\nprint('hello')\n" }
+      files = List("{{tmp}}/test.py")
+      expect {
+        code = 0
+        files { ["{{tmp}}/test.py"] = "print('hello')\n" }
+      }
+    }
+    ["passes clean file"] {
+      run = "check"
+      write { ["{{tmp}}/test.py"] = "print('hello')\n" }
+      files = List("{{tmp}}/test.py")
+      expect { code = 0 }
+    }
+    ["check respects config exclude"] {
+      run = "check"
+      write {
+        ["{{tmp}}/test.py"] = "import sys\nprint('hello')\n"
+        ["{{tmp}}/ruff.toml"] = "exclude = [\"test.py\"]\n"
+      }
+      files = List("{{tmp}}/test.py")
+      expect { code = 0 }
+    }
+    ["fix respects config exclude"] {
+      run = "fix"
+      write {
+        ["{{tmp}}/test.py"] = "import sys\nprint('hello')\n"
+        ["{{tmp}}/ruff.toml"] = "exclude = [\"test.py\"]\n"
+      }
+      files = List("{{tmp}}/test.py")
+      expect {
+        code = 0
+        files { ["{{tmp}}/test.py"] = "import sys\nprint('hello')\n" }
+      }
+    }
+  }
 }

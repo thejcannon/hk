@@ -1,10 +1,10 @@
 import "../Config.pkl"
 
 go_lines = new Config.Step {
-    category = "Go"
-    description = "Long line fixer"
-    glob = "**/*.go"
-    stage = "<JOB_FILES>"
-    check = "golines --dry-run {{ files }}"
-    fix = "golines -w {{ files }}"
+  category = "Go"
+  description = "Long line fixer"
+  glob = "**/*.go"
+  stage = "<JOB_FILES>"
+  check = "golines --dry-run {{ files }}"
+  fix = "golines -w {{ files }}"
 }

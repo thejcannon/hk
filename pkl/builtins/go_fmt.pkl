@@ -1,16 +1,17 @@
 import "../Config.pkl"
 
 go_fmt = new Config.Step {
-    category = "Go"
-    description = "Go formatter"
-    glob = "**/*.go"
-    stage = "<JOB_FILES>"
-    check_list_files = """
-FILES=$(gofmt -s -l {{files}})
-if [ -n "$FILES" ]; then
-  echo "$FILES"
-  exit 1
-fi
-"""
-    fix = "gofmt -s -w {{files}}"
- }
+  category = "Go"
+  description = "Go formatter"
+  glob = "**/*.go"
+  stage = "<JOB_FILES>"
+  check_list_files =
+    """
+    FILES=$(gofmt -s -l {{files}})
+    if [ -n "$FILES" ]; then
+      echo "$FILES"
+      exit 1
+    fi
+    """
+  fix = "gofmt -s -w {{files}}"
+}
